@@ -12,6 +12,8 @@ import java.util.List;
 @SessionScoped
 public class KargoTipiBean implements Serializable {
 
+
+
     private KargoTipi entity;
     private KargoTipiDAO dao;
     private List<KargoTipi> list;
@@ -62,7 +64,6 @@ public class KargoTipiBean implements Serializable {
         this.list = list;
     }
 
-    
-    
-}
 
+
+}

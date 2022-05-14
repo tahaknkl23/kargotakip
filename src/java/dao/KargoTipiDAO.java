@@ -13,6 +13,27 @@ import util.DBConnection;
 
 public class KargoTipiDAO extends DBConnection {
 
+
+    private KargoDAO kargoTipiDao;
+
+        public KargoTipi findByID(int id) {
+        KargoTipi c = null;
+
+        try {
+            Statement st = this.getConnection().createStatement();
+            String query = "select * from kargotipi where id=" + id;
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                c = new KargoTipi(rs.getInt("id"), rs.getString("kargo_tipi"));
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+
+        }
+        return c;
+    }
+
+
     public void create(KargoTipi c) {
         try {
             Statement st = this.getConnection().createStatement();
@@ -34,7 +55,6 @@ public class KargoTipiDAO extends DBConnection {
 
         }
     }
-
     public void delete(KargoTipi c) {
         try {
             Statement st = this.getConnection().createStatement();
@@ -62,7 +82,5 @@ public class KargoTipiDAO extends DBConnection {
         return list;
     }
 
-    public KargoTipi findByID(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+
 }

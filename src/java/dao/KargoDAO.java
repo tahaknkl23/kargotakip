@@ -13,6 +13,7 @@ import util.DBConnection;
 
 public class KargoDAO extends DBConnection {
 
+
     public void create(Kargo c) {
         try {
             Statement st = this.getConnection().createStatement();
@@ -34,7 +35,6 @@ public class KargoDAO extends DBConnection {
 
         }
     }
-
     public void delete(Kargo c) {
         try {
             Statement st = this.getConnection().createStatement();

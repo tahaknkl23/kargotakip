@@ -12,6 +12,7 @@ import jakarta.faces.convert.Converter;
 import jakarta.faces.convert.FacesConverter;
 
 
+
 @FacesConverter("kargotipiConverter")
 public class KargoTipiConverter implements Converter {
 
@@ -38,5 +39,5 @@ public class KargoTipiConverter implements Converter {
         this.kargoDao = kargoDao;
     }
 
-    
+
 }
